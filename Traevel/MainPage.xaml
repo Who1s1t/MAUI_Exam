@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Traevel.MainPage">
+    <StackLayout Orientation="Horizontal">
+        <StackLayout>
+        <Label Text="Список путешествий " FontSize="24"/>
+        <ListView ItemsSource="{Binding Travelers}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Margin="10">
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Место отдыха:" FontSize="16" />
+                                    <Label Text="{Binding Mesto}" FontSize="16" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Дата начала отдыха:" FontSize="16" />
+                                    <Label Text="{Binding Start}" FontSize="14" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Дата конца отдыха:" FontSize="16" />
+                                    <Label Text="{Binding End}" FontSize="14" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Бюджет отдыха:" FontSize="16" />
+                                    <Label Text="{Binding Budget}" FontSize="16" />
+                                    </StackLayout>
+            
+                                
+                                
+                                
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+        <StackLayout>
+            <Label Text="Добавить путешествие"
+               FontSize="24"
+               HorizontalOptions="Center" />
+            <Entry x:Name="Mesto" 
+   Placeholder="Место отдыха" 
+   Margin="0,10,0,0"/>
+            <Entry  x:Name="Start" 
+               Placeholder="Дата начала отдыха" 
+               Margin="0,10,0,0"/>
+
+            <Entry x:Name="End" 
+               Placeholder="Дата конца отдыха" 
+               Margin="0,10,0,0" />
+
+
+            <Entry x:Name="Budget" 
+   Placeholder="Бюджет отдыха" 
+   Margin="0,10,0,0" />
+
+            <Button Text="Добавить путешествие" 
+                 Clicked="OnAddButtonClicked" 
+                Margin="0,20,0,0"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
